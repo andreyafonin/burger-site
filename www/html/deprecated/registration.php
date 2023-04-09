@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Обменограм</title>
+</head>
+
+<body>
+<div class="b-example-divider"></div>
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <img class="img1" src="img/logo.jpg" alt="no cats" width="60px" height="60px">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="./index.php" class="nav-link px-2 text-secondary">Home</a></li>
+                </ul>     
+            </div>
+        </div>
+    </header>
+
+<div class="container mt-4">
+    <h1>registration form</h1>
+    
+    <form class="size_form" action="/validation-form/check.php" method="post">  
+        <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name"><br>
+        <input type="text" class="form-control" name="email" id="email" placeholder="Enter email"><br>
+        <input type="password" class="form-control" name="pass" id="pass" placeholder="Enter password"><br>
+        <input type="password" class="form-control" name="pass" id="pass" placeholder="Enter password again"><br>
+        <button class="btn btn-success" type="submit"> Sign-up </button>
+    </form>   
+</div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: ./nginx/
+    container_name: nginx-container
+    ports:
+      - 8080:80
+      - 8443:443
+    volumes:
+      - nginx-log-data:/var/log/nginx
+      - nginx-cache-data:/etc/nginx/cache
+      - ./www/html/:/var/www/html/
+
+  php:
+    build: ./php/
+    container_name: php-container
+    # expose:
+    #   - 9000
+    volumes:
+      - ./www/html/:/var/www/html/
+
+  db:
+    build: ./mysql/
+    container_name: db-container
+    restart: always
+    ports:
+      - 3306:3306
+      - 33060:33060
+    # command: --init-file /data/application/init.sql
+    environment:
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+      MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+    volumes:
+      - db-data:/var/lib/mysql
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    container_name: pma-container
+    restart: always
+    ports:
+      - 8081:80
+    environment:
+      PMA_HOST: db
+
+volumes:
+  db-data:
+    # driver: local
+    # external: true
+  nginx-log-data:
+  nginx-cache-data:

@@ -1,0 +1,29 @@
+.product_form {
+    margin-top: 20px;
+    background-color: #979c97;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 600px;
+}
+.picture_form {
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+    border-radius: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.name_form {
+    color: red;
+    width: 100%;
+    text-align: center;
+}
+.description_form {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;    
+}
